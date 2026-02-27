@@ -1,0 +1,41 @@
+#miTabla{
+   border-collapse: collapse;
+   width:50%;
+   background-color: white; 
+}
+
+#miTabla th, td{
+    border:1px solid #ccc;
+    padding:8px;
+    
+    text-align: center;
+}
+
+.pagination button{
+    margin:5px;
+    background-color: yellow;
+}
+
+main{
+    background-color: green;
+    display:flex;
+	flex-direction: column;
+	min-height: calc(100vh - 80px);
+	align-items: center;
+    justify-content: center;
+    padding-top:clamp(8rem, 5vh, 4rem);
+    padding-bottom: 4rem;
+}
+
+.imgMenu{
+    width:200px;
+    height:300px;
+    cursor:pointer;
+    transition-duration: transform 0.2 ease;
+    will-change: transform; /* LE AVISA AL NAVEGADOR PARA QUE PREPARE LA TARJETA GRAFICA PARA EL scale() */
+    transform: translateZ(0); /* FORZAR ACELERACION POR HARDWARE */
+}
+
+.imgMenu:hover{
+    transform: scale(1.1);
+}
