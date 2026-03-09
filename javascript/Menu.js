@@ -1,47 +1,94 @@
-const datos=[
-{imagen: "contenido/Cortes de pelo/Corte.webp", imagen2: "contenido/Cortes de pelo/Corte2.webp"},
-{imagen: "contenido/Cortes de pelo/Corte3.webp", imagen2: "contenido/Cortes de pelo/Corte4.webp"},
-{imagen: "contenido/Cortes de pelo/Corte5.webp", imagen2: "contenido/Cortes de pelo/Corte6.webp"},
+
+
+$(document).ready(function(){
+
+const datos = [
+    { nombre: "Corte de Cabello", precio: "$2500", rating: 1.9, cat: "Corte" },
+    { nombre: "Tinte / Color", precio: "$4500", rating: 2.7, cat: "Tratamiento" },
+    { nombre: "Perfilado de Barba", precio: "$1500", rating: 4.5, cat: "Corte" },
+    { nombre: "Alisado Keratina", precio: "$8000", rating: 4.8, cat: "Tratamiento" },
+    { nombre: "Alisado Keratina", precio: "$8000", rating: 5.8, cat: "Tratamiento" }
 ];
 
-const filasPorPagina=3;
-let paginaActual=1;
+const tabla = $('#miTabla').DataTable({
+data: datos,
+pageLength: 5,
+columns: [
+{ data: "nombre" },
+{ data: "precio" },
+{ data: "rating" },
+{ data: "cat" }
+]
+});
 
-function mostrarPagina(pagina){
-    const tablaBody=document.querySelector("#miTabla tbody");
-    tablaBody.innerHTML="";
-    paginaActual=pagina;
-    /* EL Array DE 'datos.slice' SIEMPRE EMPIEZA POR EL ÍNDICE 0 */
-    const inicio=(pagina-1)*filasPorPagina;
-    const fin=inicio+filasPorPagina;
-    const datosPagina=datos.slice(inicio,fin);
-    datosPagina.forEach (datos=>{
-        const fila=`
-        <tr>
-        <td><img src="${datos.imagen}" class="imgMenu"></td>
-        <td><img src="${datos.imagen2}" class="imgMenu"></td>
-        </tr>
-        `;
-        tablaBody.innerHTML+=fila;
-    });
-    crearBotones();
+
+
+$.fn.dataTable.ext.search.push(
+function(settings, data, dataIndex){
+
+let filtroPrecio = $('#precios').val();
+let filtroValoracion = $('#valoracion').val();
+
+let filtroCategoria = $('#categoria').val();
+
+let precio = parseFloat(data[1].replace(/[^0-9.]/g,'')) || 0;
+let valoracion = parseFloat(data[2]) || 0;
+let categoria = data[3];
+
+let cumplePrecio = true;
+let cumpleValoracion = true;
+let cumpleCategoria = true;
+
+/* FILTRO PRECIO */
+
+if (filtroPrecio === "MENOS DE 2000") {
+cumplePrecio = precio < 2000;
 }
 
-function crearBotones(){
-    const contenedor=document.getElementById("paginacion");
-    contenedor.innerHTML="";
-    const totalPaginas=Math.ceil(datos.length/filasPorPagina);
-    for(let i=1;i<=totalPaginas;i++){
-        const boton=document.createElement("button");
-        boton.innerText=i;
-        if(i===paginaActual){
-            boton.style.fontWeight="bold";
-        }
-        boton.addEventListener("click",()=>{
-            mostrarPagina(i);
-        });
-        contenedor.appendChild(boton);
-    }
+if (filtroPrecio === "MAS DE 4000") {
+cumplePrecio = precio > 4000;
 }
 
-mostrarPagina(1);
+if (filtroPrecio === "ENTRE 2000 Y 3000") {
+cumplePrecio = precio >= 2000 && precio <= 4000;
+}
+
+/* FILTRO VALORACION POR RANGO */
+
+if (filtroValoracion !== "") {
+
+let min = parseFloat(filtroValoracion);
+let max = min + 0.9;
+
+cumpleValoracion = valoracion >= min && valoracion <= max;
+
+}
+
+/* FILTRO CATEGORIA */
+
+if (filtroCategoria !== "") {
+cumpleCategoria = categoria.toLowerCase().trim() === filtroCategoria.toLowerCase().trim();;
+}
+
+
+return cumplePrecio && cumpleValoracion && cumpleCategoria;
+
+});
+
+
+
+$('#btnFiltrar').on('click', function(){
+
+tabla.draw();
+
+});
+
+$('#btnReinicio').on('click', function(){
+$('#precios').val('');
+$('#valoracion').val('');
+$('#categoria').val('');
+
+ tabla.search('').draw();
+
+});
+});
