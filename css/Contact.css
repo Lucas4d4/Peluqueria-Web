@@ -1,0 +1,65 @@
+.divContact{
+    max-width: 90%;
+    width:30%;
+    background-color: #c9bbad;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    border-radius: 3px;
+    padding:15px 10px 15px 10px;
+}
+
+.textContact{
+    font-family: 'Raleway',sans-serif;
+    font-size: 1.2rem;
+    padding: 4px 6px 4px 6px;
+    width:80%;
+    transition-duration: 0.3s;
+    background-color: #f0f0f0;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #8f867d;
+}
+
+.textContact:hover{
+    background-color: #dbdada;
+}
+
+.textContact:focus{
+    background-color: #dbdada;
+}
+
+.btnContact{
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+    padding: 6px 10px 6px 10px;
+    background-color: #f0f0f0;
+    transition-duration: 0.3s;
+    cursor:pointer;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #333;
+    font-weight: 600;
+}
+ 
+.btnContact:hover{
+    background-color: #dbdada;
+    transform: translateY(-2px);
+}
+
+.divContact p{
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+}
+
+.mainContact{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
