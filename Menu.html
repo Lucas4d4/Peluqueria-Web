@@ -8,32 +8,89 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+ <!-- DataTables -->
+ <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+ <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+</head> 
 <body>
  <header>
     <img src="contenido/Marilook-logo.png" class="logoEdit">
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Menu</a></li>
-        <li><a href="index.html">Contact</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Contact.html">Contact</a></li>
     </ul>
  </header>
 
  <main>
+<table id="filtrado">
+<thead>
+    <tr>
+        <th colspan="5">FILTRAR SERVICIOS</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+            PRECIOS
+            <br>
+            <select id="precios">
+                <option value="">TODOS</option>
+                <option value="MENOS DE 2000">MENOS DE $2000</option>
+                <option value="MAS DE 4000">MÁS DE $4000</option>
+                <option value="ENTRE 2000 Y 3000">ENTRE $2000 Y $4000</option>
+            </select>
+        </td>
+        <td>
+            VALORACION
+            <br>
+            <select id="valoracion">
+                <option value="">TODAS</option>
+                <option value="1.0">1.0</option>
+                <option value="2.0">2.0</option>
+                <option value="3.0">3.0</option>
+                <option value="4.0">4.0</option>
+                <option value="5.0">5.0</option>
+            </select>
+        </td>
+        <td>
+            CATEGORIA 
+            <br>
+            <select id="categoria">
+                <option value="">TODAS</option>
+                <option value="CORTE">CORTE</option>
+                <option value="TRATAMIENTO">TRATAMIENTO</option>
+            </select>
+        </td>
+        <td><button id="btnFiltrar">FILTRAR</button></td>
+        <td><button id="btnReinicio">RESTABLECER</button></td>
+    </tr>
+</tbody>
+</table>
+
+<div id="fondoDataTable">
 <table id="miTabla">
-    <thead>
+    <thead> 
         <tr>
-            <th colspan="2">Tipos de Cortes</th>
+            <th colspan="4">SERVICIOS DE PELUQUERIA</th>
+        </tr>
+        <tr>
+            <th>SERVICIO</th>
+            <th>PRECIOS</th>
+            <th>VALORACION</th>
+            <th>CATEGORIA</th>
         </tr>
     </thead>
     <tbody>
         <!-- SE INSERTARÁ LOS DATOS DE JavaScript AQUÍ -->
     </tbody>
  </table>
+</div>
 
- <div class="pagination" id="paginacion">
 
- </div>
 
  </main>
  <script src="javascript/Menu.js"></script>
