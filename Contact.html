@@ -24,13 +24,13 @@
                 <form id="contact-form" action="https://formspree.io/f/mbdzdaeo" method="post">
             <h1>CONTACTO</h1>
             <br>
-            <input type="text" class="textContact" placeholder="Ingrese nombre y apellido"  minlength="5" required>
+            <input type="text" name="nombre" class="textContact" placeholder="Ingrese nombre y apellido"  minlength="5" required>
             <br>
-            <input type="email" class="textContact" placeholder="Ingrese correo(@gmail, @yahoo, etc)" required>
+            <input type="email" name="email" class="textContact" placeholder="Ingrese correo(@gmail, @yahoo, etc)" required>
             <br>
-            <input type="text" class="textContact" placeholder="Ingrese su asunto" minlength="10" required>
+            <input type="text" name="asunto" class="textContact" placeholder="Ingrese su asunto" minlength="10" required>
             <br>
-            <textarea class="textContact" rows="5" placeholder="Redacte su mensaje..." minlength="5" required></textarea>
+            <textarea class="textContact" name="mensaje" rows="5" placeholder="Redacte su mensaje..." minlength="5" required></textarea>
             <br>
             <input type="submit" class="btnContact" value="ENVIAR MENSAJE">
             <p id="form-status"></p>
@@ -41,3 +41,4 @@
 </body>
 
 </html>
+
