@@ -1,29 +1,102 @@
 #miTabla{
+    color:black;
    border-collapse: collapse;
-   width:50%;
-   background-color: white; 
+   width:700px;
+    background-color: #f0f8ff; 
+   font-family: 'Raleway',sans-serif;
 }
-
+ 
 #miTabla th, td{
     border:1px solid #ccc;
     padding:8px;
-    
     text-align: center;
+    font-size:1.2rem;
 }
 
-.pagination button{
-    margin:5px;
-    background-color: yellow;
+#fondoDataTable{
+    background-color: #c9bbad;
+    padding: 30px;
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+
+
+#fondoDataTable select{
+    background-color: #f0f0f0; /* Color de fondo que quieras */
+  border: 1px solid #ccc;    /* Opcional, para mejorar el borde */
+  border-radius: 4px;        /* Bordes redondeados opcionales */
+  padding: 4px 8px;          /* Espaciado interno */
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+}
+
+#fondoDataTable input{
+    background-color: #f0f0f0; /* Color de fondo que quieras */
+    border: 1px solid #ccc;    /* Opcional, para mejorar el borde */
+    border-radius: 4px;        /* Bordes redondeados opcionales */
+    padding: 4px 8px;          /* Espaciado interno */
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+}
+
+.dataTables_info {
+  margin-top: 20px; /* espacio debajo del texto "Showing..." */
+}
+
+.dataTables_paginate {
+  /* si quieres, puedes agregar margen arriba también */
+  margin-top: 20px;
+}
+
+
+#filtrado{
+    width:700px;
+    background-color: #c9bbad;
+    margin-bottom: 1.5rem;
+    font-family: 'Raleway',sans-serif;
+    border-collapse: collapse;
+}
+
+#filtrado tr{
+    font-size: 1rem;
+}
+
+#filtrado th{
+    font-size: 1.3rem;
+    padding: 10px 0 10px 0;
+}
+
+#filtrado td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+#filtrado select{
+    background-color: #f0f0f0; /* Color de fondo que quieras */
+    border: 1px solid #ccc;    /* Opcional, para mejorar el borde */
+    border-radius: 4px;        /* Bordes redondeados opcionales */
+    padding: 4px 8px;          /* Espaciado interno */
+    color: #333;
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
 }
 
 main{
-    background-color: green;
     display:flex;
 	flex-direction: column;
 	min-height: calc(100vh - 80px);
 	align-items: center;
     justify-content: center;
-    padding-top:clamp(8rem, 5vh, 4rem);
+    padding-top:clamp(4rem, 5vh, 4rem);
     padding-bottom: 4rem;
 }
 
@@ -38,4 +111,18 @@ main{
 
 .imgMenu:hover{
     transform: scale(1.1);
+}
+
+#btnFiltrar, #btnReinicio{
+    font-family: 'Raleway',sans-serif;
+    font-size: 1rem;
+    padding: 6px 10px 6px 10px;
+    background-color: #f0f0f0;
+    transition-duration: 0.3s;
+    cursor:pointer;
+    font-weight: 600;
+}
+
+#btnFiltrar:hover, #btnReinicio:hover{
+    background-color: #dbdada;
 }
