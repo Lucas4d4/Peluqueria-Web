@@ -16,61 +16,48 @@
  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </head> 
 <body>
- <header>
+ <header> 
     <img src="contenido/Marilook-logo.png" class="logoEdit">
-    <ul>
-        <li><a href="index.html">Home</a></li>
+
+      <!-- The hamburger menu -->
+       <input type="checkbox" id="valido">
+      <label class="btnBurger" for="valido"><img src="contenido/menu-burger.svg" class="imgMenu"></label>
+      <ul>
+        <li class="liFirst"><a href="index.html">Home</a></li>
         <li><a href="Menu.html">Menu</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-    </ul>
+        <li class="liLast"><a href="Contact.html">Contact</a></li>
+      </ul>
  </header>
 
- <main>
-<table id="filtrado">
-<thead>
-    <tr>
-        <th colspan="5">FILTRAR SERVICIOS</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>
-            PRECIOS
-            <br>
-            <select id="precios">
-                <option value="">TODOS</option>
-                <option value="MENOS DE 2000">MENOS DE $2000</option>
-                <option value="MAS DE 4000">MÁS DE $4000</option>
-                <option value="ENTRE 2000 Y 3000">ENTRE $2000 Y $4000</option>
-            </select>
-        </td>
-        <td>
-            VALORACION
-            <br>
-            <select id="valoracion">
-                <option value="">TODAS</option>
-                <option value="1.0">1.0</option>
-                <option value="2.0">2.0</option>
-                <option value="3.0">3.0</option>
-                <option value="4.0">4.0</option>
-                <option value="5.0">5.0</option>
-            </select>
-        </td>
-        <td>
-            CATEGORIA 
-            <br>
-            <select id="categoria">
-                <option value="">TODAS</option>
-                <option value="CORTE">CORTE</option>
-                <option value="TRATAMIENTO">TRATAMIENTO</option>
-            </select>
-        </td>
-        <td><button id="btnFiltrar">FILTRAR</button></td>
-        <td><button id="btnReinicio">RESTABLECER</button></td>
-    </tr>
-</tbody>
-</table>
+<main>
+<div class="filtradoTitulo">
+<h1>Filtrar Cortes</h1>
+</div>
+<br>
+<div class="filtrado">
+<select>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+</select>
+<select>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+</select>
+<select>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+    <option>Entre 200 y 300</option>
+</select>
+<button>HACER CLICK</button>
 
+</div>
+
+
+
+
+<!-- 
 <div id="fondoDataTable">
 <table id="miTabla">
     <thead> 
@@ -85,14 +72,18 @@
         </tr>
     </thead>
     <tbody>
-        <!-- SE INSERTARÁ LOS DATOS DE JavaScript AQUÍ -->
+         SE INSERTARÁ LOS DATOS DE JavaScript AQUÍ 
     </tbody>
  </table>
 </div>
 
+-->
 
 
- </main>
+ </main> 
+
+
+
  <script src="javascript/Menu.js"></script>
  
 </body>
