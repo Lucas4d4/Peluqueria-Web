@@ -1,6 +1,8 @@
 *{
-    margin:0;
-    padding:0;
+
+	margin:0;
+	box-sizing: border-box;
+
 }
  
 body{
@@ -34,6 +36,21 @@ header ul{
     align-self: flex-end;
 }
 
+.btnBurger{
+  display: none;
+  background-color:#fac205;
+}
+
+.imgMenu{
+	width:26px;
+	height:26px;
+}
+
+nav input[type="checkbox"],
+    nav button {
+      display: none;
+    }
+
 ul li{
     list-style: none;
     padding: 10px 0 10px 0;
@@ -64,15 +81,18 @@ ul a:hover{
 }
 
 
- 
+  
 .tableIndex{
     font-size: 1.5rem;
     font-family: 'Cormorant Garamond', serif;
     width:100%;
+    max-width: 100%;
     height:calc(100vh - 80px);
     border-collapse: collapse; /* Une los bordes */
     border-spacing: 0; /* Quita el espacio entre celdas */
     color:white;
+    display: flex;
+    flex-direction: row;
 }
 
 h3{
@@ -80,14 +100,25 @@ h3{
     font-style: italic;
 }
 
-.tableIndex td{
+.divColumn{
+    align-content: center;
     text-align: center;
+    height: 100%;
     width: 50%;
     margin:0;
     padding: 0;
 }
 
-.tableIndex a{
+.divColumn2{
+  align-content: center;
+  height: 100%;
+    text-align: center;
+    width: 50%;
+    margin:0;
+    padding: 0; 
+}
+
+.divColumn a{
     background-color: white;
     color:black;
     font-family: 'Raleway',sans-serif;
@@ -101,7 +132,7 @@ h3{
     text-decoration: none;
 }
 
-.tableIndex a:hover{
+.divColumn a:hover{
     transform: scale(1.1);
     background-color: gray;
 }
@@ -117,3 +148,168 @@ FUENTES:
 TITULOS: 'Open Sans', sans-serif;
 TEXTO: 'Poppins', sans-serif;
 */
+header input[type="checkbox"]{
+  display: none;
+}
+
+
+@media (max-width:768px) {
+    header ul{
+    display: block;
+  position: fixed;
+  right: 0;
+  top:0%;
+  left:50%;
+  background-color: #f8fafc;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  z-index: 9998;
+  text-align: left;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    transition:0.3s;
+    }
+
+    header input[type="checkbox"]:not(:checked) ~ ul {
+        transform: translateX(200%);
+      }
+
+header input[type="checkbox"]:checked ~ ul {
+        transform: translateX(0%);
+      }
+ 
+header input[type="checkbox"]:checked ~ .btnBurger {
+        transform: translateX(0%);
+        transform:rotate(90deg);
+        background-color: #f8fafc;
+      }
+
+header input[type="checkbox"]:not(:checked) ~ .btnBurger {
+        transform: translate(-50%);
+      }
+
+header{
+  justify-content: flex-end;
+}
+
+    .btnBurger{
+      position: relative;
+          text-align: right;
+        display: block;
+        padding: 0.5em;
+        line-height: 1.6em;
+      margin-right: 20px;
+  z-index: 9999;
+  transition: 0.3s;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: #ada4a4;
+}
+
+header li{
+  width:100%;
+  list-style-type: none;
+    margin:0;
+    padding: 0;
+    text-align: center;
+
+}
+
+.liFirst{
+  margin-top:40%;
+}
+
+.liLast{
+  margin-bottom: 40%;
+
+}
+
+
+header li a{
+  display: block;
+	text-decoration:none;
+	background-color:#f8fafc;
+  border-radius: 0%;
+	color:#000000;
+	font-size:1.4rem;
+	padding:16px 20px;
+  box-sizing: border-box; /* SIRVE PARA EVITAR DESBORDE */
+	transition: 0.3s;
+}
+
+header li a:hover{
+	background-color:#0f172a;
+	color:#f8fafc;
+}
+
+.imgMenu{
+	width:26px;
+	height:26px;
+  display: flex;
+  align-self: center;
+}
+
+.logoEdit{
+    position: absolute;
+    height:150px;
+    width:150px;
+    left:10px;
+}
+
+
+.tableIndex{
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    color:white;
+     display: flex;
+     flex-direction: column;
+  width: 100%;
+}
+
+h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.divColumn{
+    width: 100%;
+    height: 50%;
+}
+
+.divColumn2{
+    width: 100%;
+    height: 50%;
+}
+
+
+
+.divColumn a{
+    background-color: white;
+    color:black;
+    font-family: 'Raleway',sans-serif;
+    font-size:1.2rem;
+    padding: 6px 10px 6px 10px;
+    border-radius: 2px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    transition-duration: 0.3s;
+    text-decoration: none;
+}
+
+.divColumn a:hover{
+    transform: scale(1.1);
+    background-color: gray;
+}
+
+.imgFondo{
+    display: block;
+    width:100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imágen sin deformarla */
+}
+
+}
