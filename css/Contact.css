@@ -63,3 +63,11 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media(max-width:768px) {
+    .divContact{
+    width: 90%;
+    font-size: 0.8rem;
+}
+
+}

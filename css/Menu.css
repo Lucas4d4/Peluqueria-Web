@@ -2,19 +2,37 @@
 .filtrado{
     background-color:rgb(215, 250, 220);
     font-family:'Cormorant Garamond', serif;
-    width: 600px;
+    width: 800px;
     max-width: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 10px 15px 10px 15px;
     gap:10px;
      overflow: hidden; /* evita desbordes */
 }
 
+.tableHair{
+    background-color:rgb(215, 250, 220);
+    font-family:'Cormorant Garamond', serif;
+    width: 800px;
+    max-width: 90%;
+    padding: 10px 15px 10px 15px;
+}
+
+.tableHair thead th{
+    padding-bottom:15px;
+}
+
+.tableHair tbody{
+    text-align: center;
+    background-color: aliceblue;
+    font-family: 'Raleway',sans-serif;
+}
+
 .filtradoTitulo{
     background-color:rgb(215, 250, 220);
     font-family:'Cormorant Garamond', serif;
-    width: 600px;
+    width: 800px;
     max-width: 90%; 
     padding: 10px 15px 10px 15px;
     text-align: center;
@@ -31,6 +49,17 @@ select{
     box-sizing: border-box;
 }
 
+#filterRating, #filterPrice{
+    font-family: 'Raleway',sans-serif;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+} 
+
 button{
     font-family: 'Raleway',sans-serif;
 }
@@ -42,7 +71,7 @@ main{
     align-items: center;     /* centra horizontal */
     min-height: calc(100vh - 80px);
 }
-
+  
 @media (max-width:768px) {
     
  .filtrado{
