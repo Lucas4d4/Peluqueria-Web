@@ -12,15 +12,19 @@
 </head>
 <body>
     <header>
-        <img class="logoEdit" src="contenido/Marilook-logo.png">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Menu.html">Menu</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
+        <img src="contenido/Marilook-logo.png" class="logoEdit">
+
+      <!-- The hamburger menu -->
+       <input type="checkbox" id="valido">
+      <label class="btnBurger" for="valido"><img src="contenido/menu-burger.svg" class="imgMenu"></label>
+      <ul>
+        <li class="liFirst"><a href="index.html">Home</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li class="liLast"><a href="Contact.html">Contact</a></li>
+      </ul>
     </header>
     <form id="contact-form" action="https://formspree.io/f/mbdzdaeo" method="post">
-    <main class="mainContact">
+    <main class="mainContact"> 
         <div class="divContact">
             <h1>CONTACTO</h1>
             <br>
