@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-device, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Principal.css">
+    <link rel="stylesheet" href="css/Cortes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="contenido/Marilook-logo.png" class="logoEdit">
+
+      <!-- The hamburger menu -->
+       <input type="checkbox" id="valido">
+      <label class="btnBurger" for="valido"><img src="contenido/menu-burger.svg" class="imgMenu"></label>
+      <ul>
+        <li class="liFirst"><a href="index.html">Home</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li class="liLast"><a href="Contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <main>
+        <br>
+         <div class="divHairMenuTittle">
+            <h1>Tipos de cortes</h1>
+         </div>
+         <br>
+            <table id="myTableHair">
+                <tbody> 
+                <tr>
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte.webp"></td>
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte2.webp"></td>
+                </tr>
+                <tr> 
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte3.webp"></td>
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte4.webp"></td>
+                </tr>
+                <tr>
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte5.webp"></td>
+                    <td><img onclick="abrirModal(this.src)" class="imgHairIcon" src="contenido/Cortes de pelo/Corte6.webp"></td>
+                </tr>
+                </tbody>
+            </table>
+         <br>
+         <div id="pagination"></div>
+         <br>
+         <div id="modal" class="modal">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="imagenGrande">
+         </div>
+         <script src="javascript/Cortes.js"></script>
+    </main>
+</body>
+
+</html>
