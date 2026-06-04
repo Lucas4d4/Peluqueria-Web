@@ -48,7 +48,7 @@
  
 .btnContact:hover{
     background-color: #dbdada;
-    transform: translateY(-2px);
+    transform: translateY(-2px);   
 }
 
 .divContact p{
