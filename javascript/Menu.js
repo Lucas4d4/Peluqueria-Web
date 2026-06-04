@@ -79,7 +79,7 @@ function clickButton(){
         }
 
         if(filterPrice!==""&&price2>precioMax){
-            mostrar=false;
+            mostrar=false; 
         }
 
         if(filterRating!==""&&rating2<valoracionMin){
@@ -174,7 +174,7 @@ function aparte(){
             /* MOSTRAR CONDICIONES CONTRARIAS PARA QUE mostrar SEA IGUAL A false */
             /* if(valoracion >= min && valoracion <= max) */
             if(valoracion < min && valoracion > max){
-            mostrar=false;
+            mostrar=false; 
             }
             }
 
