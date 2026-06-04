@@ -25,12 +25,12 @@
       </ul>
     </header>
     <form id="contact-form" action="https://formspree.io/f/mbdzdaeo" method="post">
-    <main class="mainContact"> 
-        <div class="divContact">
+    <main class="mainContact" id="mainContact"> 
+        <div class="divContact" id="divContact">
             <h1>CONTACTO</h1>
             <br>
             <input type="text" name="nombre" class="textContact" placeholder="Ingrese nombre y apellido"  minlength="5" required>
-            <br>
+            <br> 
             <input type="email" name="email" class="textContact" placeholder="Ingrese correo(@gmail, @yahoo, etc)" required>
             <br>
             <input type="text" name="asunto" class="textContact" placeholder="Ingrese su asunto" minlength="10" required>
@@ -40,8 +40,14 @@
             <input type="submit" class="btnContact" value="ENVIAR MENSAJE">
             <p id="form-status"></p>
         </div>
+        <div class="divRedes">
+    <a href="Cortes.html"><img src="contenido/Redes/facebookLogo.svg"></a>
+    <a href="Cortes.html"><img src="contenido/Redes/instagramLogo.svg"></a>
+    <a href="Cortes.html"><img src="contenido/Redes/twitterLogo.svg"></a>
+  </div>
+  <a href="Contact.html" id="btnWhatsapp"><img class="buttonWhatsapp" src="contenido/Redes/whatsappLogo.svg"></a>
+    <script src="javascript/Contact.js"></script> 
     </main>
     </form>
-    <script src="javascript/Contact.js"></script>
 </body>
 </html>
