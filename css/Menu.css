@@ -89,7 +89,7 @@ main{
     flex-direction: column;  /* pone o acomoda los elementos uno abajo del otro */
     justify-content: center; /* centra vertical */
     align-items: center;     /* centra horizontal */
-    min-height: calc(100vh - 80px);
+    min-height: calc(100dvh - 80px); 
 }
   
 @media (max-width:768px) {
